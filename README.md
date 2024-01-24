@@ -25,7 +25,7 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
-## Находять рядом с файлом manage.py выполнить миграции и запустить сервер
+## Находясь рядом с файлом manage.py выполнить миграции и запустить сервер
 
 ```
 python manage.py migrate
