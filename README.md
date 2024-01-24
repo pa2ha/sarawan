@@ -31,7 +31,7 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
-# Эндоинты
+# Эндпоинты
 ## Регистрация
 Получить токен можно пост запросом по адресу http://127.0.0.1:8000/auth/users/
 ## API ROOT
