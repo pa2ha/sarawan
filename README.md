@@ -25,6 +25,12 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
+## Находять рядом с файлом manage.py выполнить миграции и запустить сервер
+
+```
+python manage.py migrate
+python manage.py runserver
+```
 # Эндоинты
 ## Регистрация
 Получить токен можно пост запросом по адресу http://127.0.0.1:8000/auth/users/
