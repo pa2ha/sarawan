@@ -12,7 +12,7 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CategorySerializer
 
 
-class ProductViewSet(viewsets.ReadOnlyModelViewSet):
+class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
@@ -42,13 +42,13 @@ class CartViewSet(viewsets.ModelViewSet):
 
         if product_id and quantity:
             product = Product.objects.get(pk=product_id)
-            cart_item = CartItem.objects.get_or_create(cart=cart,
-                                                       product=product)
+            cart_item, create = CartItem.objects.get_or_create(cart=cart,
+                                                               product=product)
 
             cart_item.quantity = quantity
             cart_item.save()
 
-            return Response({'detail': 'Product quantity'
+            return Response({'detail': 'Product '
                              'updated successfully'})
 
         return Response({'detail': 'Invalid data provided'},
